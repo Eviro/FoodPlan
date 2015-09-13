@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: foodplan
+        psr4_prefix: foodplan
+        src_path: app
