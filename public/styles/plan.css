@@ -1,0 +1,10 @@
+h3 {
+  display: inline-block;
+  margin: 15px 0 0; }
+
+select {
+  min-width: 100px;
+  position: relative;
+  bottom: 4px; }
+
+/*# sourceMappingURL=plan.css.map */

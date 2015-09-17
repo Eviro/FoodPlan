@@ -69,7 +69,6 @@
     </div>
     <div class="col-sm-4">
         <h1>Hjælp</h1>
-        <p>Her kan du tilføje de enkelte madvare som dine retter består af.</p>
     </div>
 
 </div>

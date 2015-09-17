@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,EAAE;EACA,OAAO,EAAE,YAAY;EACrB,MAAM,EAAE,QAAQ;;AAElB,MAAM;EACJ,SAAS,EAAE,KAAK;EAChB,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,GAAG",
+"sources": ["plan.sass"],
+"names": [],
+"file": "plan.css"
+}
