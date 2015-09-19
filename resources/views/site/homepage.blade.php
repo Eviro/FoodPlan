@@ -11,6 +11,43 @@
 
 
     @section('content')
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+
+        function success(data)
+        {
+            var item = "select[name="+data.timestamp+"]";
+            console.log(item);
+            $(item).next().after('<span id="notify" class="label label-success">Saved</span>');
+            setTimeout(function() {console.log($("#notify").remove())}, 1000);
+        }
+
+       $(document.body).on('change','#planSelect',function(){
+            
+            timestamp = $(this).attr('name');
+            dishid = $(this).val();
+
+            data = {'timestamp': timestamp, 'dishid': dishid, _token: '{{ csrf_token() }}'};
+
+            console.log(data);
+
+
+            $.ajax({
+                type: "POST",
+                url: '{{ url("api1/plan/timestamp/save")}}',
+                data: data,
+                success: success
+            })
+
+        });
+
+
+
+    });
+    </script>
+
+
 
    <div class="row">
 
@@ -18,7 +55,7 @@
         <h1>Plan</h1>
             <form action="#" method="post">
             @foreach($dates as $date)
-                <select name="{{ $date->format('d-m-y') }}">
+                <select id="planSelect" name="{{ $date->format('U') }}">
                 @foreach($dishes as $dish)
 
                     <option value="{{ $dish['dishid'] }}">{{ $dish['dishname'] }}</option>
@@ -26,13 +63,14 @@
                     @endforeach
                 </select>
 
-
-                <h3>{{ $translate[$date->format('N')] }} {{ $date->format('d-m') }}
                     @if($today->format('d-m-y') == $date->format('d-m-y'))
 
-                        - I dag
-
+                        <h3 style="color:darkgreen">
+                    @else
+                        <h3>
                         @endif
+                {{ $translate[$date->format('N')] }} {{ $date->format('d-m') }}
+
                 </h3><br>
 
                 @endforeach
