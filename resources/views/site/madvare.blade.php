@@ -2,19 +2,19 @@
 
 @section('head')
 
-        <link rel="stylesheet" href="{{ url('styles/madvare.css') }}">
+<link rel="stylesheet" href="{{ url('styles/madvare.css') }}">
 
 @stop
 
 @section('content')
 
-    <!-- Script to dynamically add more fields -->
+<!-- Script to dynamically add more fields -->
 <script>
     $( document ).ready(function() {
 
         function addField()
         {
-            $('input[type=submit]').before('<label>Navn: </label><input type="text" name="foodNames[]"><br>')
+            $('input[type=submit]:first').before('<label>Navn: </label><input type="text" name="foodNames[]"><br>')
         }
 
         $('#addMoreBtn').click(function(){
@@ -40,7 +40,26 @@
             <input type="submit" value="Gem">
 
         </form>
-<button id="addMoreBtn">Tilføj et felt mere</button>
+        <button id="addMoreBtn">Tilføj et felt mere</button>
+
+
+        <h4>Slet Madvare</h4>
+        <br><br>
+
+        <form action="{{ url('api1/good/delete/') }}" method="post">
+            <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+            <input type="submit" value="Slet">
+            <select name="goodToDelete">
+                @foreach($goods as $good)
+                    <option value="{{ $good->id }}">{{ $good->displayname }}</option>
+                @endforeach
+
+            </select>
+            @if(Session::has('status'))
+                {{ session('status')}}
+            @endif
+        </form>
+
     </div>
     <div class="col-sm-4">
         <h1>Hjælp</h1>

@@ -66,6 +66,28 @@
 
 
         </form>
+
+
+
+        <form action="{{ url('api1/dish/delete/') }}" method="post">
+            <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+
+            <input type="submit" value="Slet">
+            <select name="dishToDelete">
+                @foreach($dishList as $dish)
+                    <option value="{{ $dish->id }}">{{ $dish->dishname }}</option>
+                @endforeach
+            </select>
+            @if(Session::has('status'))
+                {{ session('status')}}
+            @endif
+
+
+
+
+
+
+        </form>
     </div>
     <div class="col-sm-4">
         <h1>Hjælp</h1>

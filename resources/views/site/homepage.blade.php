@@ -55,11 +55,31 @@
         <h1>Plan</h1>
             <form action="#" method="post">
             @foreach($dates as $date)
+
+
+
+
                 <select id="planSelect" name="{{ $date->format('U') }}">
                 <option value=""></option>
                 @foreach($dishes as $dish)
 
-                    <option value="{{ $dish['dishid'] }}">{{ $dish['dishname'] }}</option>
+                   
+                    
+
+
+                    <option value="{{ $dish['dishid'] }}"
+
+                     @foreach($currentPlans as $planDate => $plan)
+
+                        @if($planDate == $date->format('d-m-y') && $dish['dishid'] == $plan['dishid'])
+                
+                        selected="selected"
+
+                        @endif
+
+                    @endforeach
+
+                    >{{ $dish['dishname'] }}</option>
 
                     @endforeach
                 </select>
