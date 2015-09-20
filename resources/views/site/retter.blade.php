@@ -91,6 +91,7 @@
     </div>
     <div class="col-sm-4">
         <h1>Hjælp</h1>
+        Her kan du oprette madvare som du så kan bruge i din plan
     </div>
 
 </div>

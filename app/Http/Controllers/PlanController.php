@@ -32,13 +32,19 @@ class PlanController extends Controller
     	$oldPlan = Plan::where('timestamp',$request->input('timestamp'));
     	$oldPlan->delete();
 
-    	$plan = new Plan();
+        // if dishid = clear dont create a new plan
+        if(!$request->input('dishid') === 'clear')
+        {
+            $plan = new Plan();
 
-    	$plan->timestamp = $request->input('timestamp');
-    	$plan->dishid = $request->input('dishid');
-    	$plan->save();
+            $plan->timestamp = $request->input('timestamp');
+            $plan->dishid = $request->input('dishid');
+            $plan->save();
 
-    	return Response()->json(['status'=>'success','timestamp' => $request->input('timestamp')]);
+        }
+            return Response()->json(['status'=>'success','timestamp' => $request->input('timestamp')]);
+        
+    	
 
     }
 }

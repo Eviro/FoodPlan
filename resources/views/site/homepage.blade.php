@@ -60,7 +60,7 @@
 
 
                 <select id="planSelect" name="{{ $date->format('U') }}">
-                <option value=""></option>
+                <option value="clear"></option>
                 @foreach($dishes as $dish)
 
                    
@@ -100,6 +100,8 @@
         </div>
         <div class="col-sm-4">
             <h1>Hjælp</h1>
+            Her kan du se din plan for de sidste 7 dage og de næste 7 dage.<br>
+            Når du vælger en ret på listen gemmes den automatisk.
         </div>
 
     </div>
