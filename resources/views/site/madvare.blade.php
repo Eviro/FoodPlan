@@ -35,7 +35,7 @@
         <h4>Tilføj en eller flere nye madvare</h4>
         <br><br>
 
-        <form action="{{ url('api1/madvare/add/') }}" method="post">
+        <form action="{{ url('api1/good/add/') }}" method="post">
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
             <input type="submit" value="Gem">
 

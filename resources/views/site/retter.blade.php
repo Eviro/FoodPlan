@@ -14,7 +14,7 @@
 
         function addDropdown()
         {
-            var string = "<br><select name='dishGoods[]'>";
+            var string = "<br><select name='dishGoods[]'><option value=''></option>";
 
             @foreach($goodsList as $good)
 
@@ -49,7 +49,7 @@
         <h4>Tilføj en ny ret</h4>
         <br><br>
 
-        <form action="{{ url('api1/retter/add/') }}" method="post">
+        <form action="{{ url('api1/dish/add/') }}" method="post">
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 
             <label>Rettens navn:</label>

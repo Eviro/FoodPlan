@@ -3,7 +3,8 @@
 namespace foodplan\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use foodplan\Dish;
+use Redirect;
 use foodplan\Http\Requests;
 use foodplan\Http\Controllers\Controller;
 

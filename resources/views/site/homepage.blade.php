@@ -56,6 +56,7 @@
             <form action="#" method="post">
             @foreach($dates as $date)
                 <select id="planSelect" name="{{ $date->format('U') }}">
+                <option value=""></option>
                 @foreach($dishes as $dish)
 
                     <option value="{{ $dish['dishid'] }}">{{ $dish['dishname'] }}</option>
