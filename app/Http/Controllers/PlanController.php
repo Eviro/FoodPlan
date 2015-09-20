@@ -33,7 +33,8 @@ class PlanController extends Controller
     	$oldPlan->delete();
 
         // if dishid = clear dont create a new plan
-        if(!$request->input('dishid') === 'clear')
+
+        if($request->input('dishid') !== 'clear')
         {
             $plan = new Plan();
 
@@ -43,7 +44,7 @@ class PlanController extends Controller
 
         }
             return Response()->json(['status'=>'success','timestamp' => $request->input('timestamp')]);
-        
+
     	
 
     }
