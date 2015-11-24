@@ -24,7 +24,7 @@ class PlanController extends Controller
     	// Confirm that all data is there
     	$this->validate($request,[
     		'timestamp' => 'required',
-    		'dishid' => 'required'
+    		'recipeid' => 'required'
     		]);
 
     	// data is valid
@@ -32,14 +32,14 @@ class PlanController extends Controller
     	$oldPlan = Plan::where('timestamp',$request->input('timestamp'));
     	$oldPlan->delete();
 
-        // if dishid = clear dont create a new plan
+        // if recipeid = clear dont create a new plan
 
-        if($request->input('dishid') !== 'clear')
+        if($request->input('recipeid') !== 'clear')
         {
             $plan = new Plan();
 
             $plan->timestamp = $request->input('timestamp');
-            $plan->dishid = $request->input('dishid');
+            $plan->recipeid = $request->input('recipeid');
             $plan->save();
 
         }

@@ -4,8 +4,8 @@ namespace foodplan;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Good extends Model
+class Component extends Model
 {
-    protected $table = 'goods';
+    protected $table = 'components';
     protected $fillable = ['displayname'];
 }

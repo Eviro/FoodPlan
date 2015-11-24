@@ -49,7 +49,7 @@
         <h4>Tilføj en ny ret</h4>
         <br><br>
 
-        <form action="{{ url('api1/dish/add/') }}" method="post">
+        <form action="{{ url('api1/recipe/add/') }}" method="post">
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 
             <label>Rettens navn:</label>
@@ -69,13 +69,13 @@
 
 
 
-        <form action="{{ url('api1/dish/delete/') }}" method="post">
+        <form action="{{ url('api1/recipe/delete/') }}" method="post">
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 
             <input type="submit" value="Slet">
             <select name="dishToDelete">
-                @foreach($dishList as $dish)
-                    <option value="{{ $dish->id }}">{{ $dish->dishname }}</option>
+                @foreach($dishList as $recipe)
+                    <option value="{{ $recipe->id }}">{{ $recipe->dishname }}</option>
                 @endforeach
             </select>
             @if(Session::has('status'))

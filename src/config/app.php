@@ -144,6 +144,7 @@ return [
         foodplan\Providers\AuthServiceProvider::class,
         foodplan\Providers\EventServiceProvider::class,
         foodplan\Providers\RouteServiceProvider::class,
+        'Clockwork\Support\Laravel\ClockworkServiceProvider',
 
     ],
 

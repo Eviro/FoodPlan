@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use \foodplan\Good;
+use \foodplan\Component;
 
-class GoodsSeeder extends Seeder
+class ComponentsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -27,6 +27,6 @@ class GoodsSeeder extends Seeder
         	],
         ];
 
-        Good::insert($data);
+        Component::insert($data);
     }
 }

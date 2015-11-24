@@ -15,7 +15,7 @@ class CreatePlanTable extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('timestamp');
-            $table->integer('dishid');
+            $table->integer('recipeid');
             $table->timestamps();
             $table->softDeletes();
         });
