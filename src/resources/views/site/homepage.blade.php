@@ -52,7 +52,7 @@
     <div class="row">
 
         <div class="col-sm-8">
-            <h1>Plan</h1>
+            <h1>14 dags plan</h1>
 
             <form action="#" method="post">
                 @foreach($dates as $date)

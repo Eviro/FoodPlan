@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,EAAE;EACA,SAAS,EAAE,IAAI;;AACjB,KAAK;EACH,KAAK,EAAE,IAAI;;AAEb,OAAO;EACL,KAAK,EAAE,IAAI;;AACb,SAAS;EACP,KAAK,EAAE,KAAK;;AACd,QAAQ;EACN,KAAK,EAAE,IAAI",
+"sources": ["shoppinglist.sass"],
+"names": [],
+"file": "shoppinglist.css"
+}

@@ -8,6 +8,7 @@ use foodplan\Component;
 use foodplan\Plan;
 use foodplan\Http\Requests;
 use foodplan\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class SiteController extends Controller
 {
@@ -61,7 +62,7 @@ class SiteController extends Controller
                 }
             }
         }
-        return $componentList;
+        return View('site.shoppinglist')->with(compact('componentList'));
     }
 
     protected function getTranslateArray()
